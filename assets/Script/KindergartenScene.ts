@@ -13,6 +13,9 @@ export default class NewClass extends cc.Component {
     // @property(cc.Label)
     // label: cc.Label = null;
 
+    @property(cc.Node)
+    Choice: cc.Node = null;
+
     // @property
     // text: string = "hello";
 
@@ -20,14 +23,16 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
-    start() {}
+    start() {
+        this.Choice.active = false;
+    }
 
     btnCheckYes() {
         cc.director.loadScene("KindergartenScene2");
     }
 
     btnCheckNo() {
-        cc.log("转到开场界面");
+        cc.director.loadScene("HomeScene");
     }
 
     // update (dt) {}
